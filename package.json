@@ -11,6 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.14.1",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.4.5",
+    "python3": "^0.0.1",
+    "yt-search": "^2.10.4",
+    "ytdl-core": "^4.11.5"
   }
 }

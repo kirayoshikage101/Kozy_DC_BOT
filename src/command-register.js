@@ -3,7 +3,13 @@ require('dotenv').config();
 
 const { REST, Routes, ApplicationCommandOptionType, user } = require('discord.js');
 
+
+//slash commands
 const commands = [ //No big letter
+    {
+        name: 'help',
+        description: 'Show all commands.',
+    },
     {
         name: 'play',
         description: 'Plays a RickRoll Song.',
@@ -50,7 +56,7 @@ const rest = new REST({ version: '10'}).setToken(process.env.TOKEN);
         await rest.put(
             Routes.applicationGuildCommands(
                 process.env.BOT_ID,
-                process.env.SERVER_ID
+                process.env.SERVER_ID2
             ),
             { body: commands },
         );

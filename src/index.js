@@ -2,8 +2,7 @@
 require('dotenv').config();
 
 const { Client, IntentsBitField, EmbedBuilder } = require('discord.js');
-const { AttachmentBuilder } = require('discord.js');
-
+const {  } = require('discord.js')
 const client = new Client({
     intents: [
         IntentsBitField.Flags.Guilds,
@@ -14,11 +13,10 @@ const client = new Client({
 });
 
 
-
 client.on('ready', (c) => {
     console.log(`${c.user.tag} is Online! :)`);
 
-    c.user.setStatus('dnd');
+    c.user.setStatus('online');
 
     let guild = c.guilds.cache.get(process.env.SERVER_ID);
 
@@ -47,13 +45,29 @@ client.on('messageCreate', (msg) => {
         msg.reply('Pretty as Always! :>');
     }
 
-    console.log(msg.guild)
+    if(msg.content === 'pogi ba si male?'){
+        msg.reply('sobra pogi!');
+    }
+
+    if(msg.content === 'Pogi ba si Inygo?' || msg.content === 'pogi ba si inygo?') {
+        msg.reply('OA sa group. :<');
+    }
+
+    if(msg.content === 'Maayong gabii mga rill...' || msg.content === 'maayong gabii mga rill...' || msg.content === 'maayong gabii mga rill'){
+        msg.reply('NIGGAS!');
+    }
+
 });
 
-// Bot /slash commands
+// Bot /slash commands from command-register.js
 client.on('interactionCreate', (interaction) => {
     if(!interaction.isChatInputCommand()) {
         return;
+    }
+
+    if(interaction.commandName === 'help'){
+        const helpMsg = new EmbedBuilder()
+        .setAuthor()
     }
 
     if(interaction.commandName === 'ping'){
