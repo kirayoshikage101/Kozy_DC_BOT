@@ -2,7 +2,7 @@
 require('dotenv').config();
 
 const { Client, IntentsBitField, EmbedBuilder } = require('discord.js');
-const {  } = require('discord.js')
+
 const client = new Client({
     intents: [
         IntentsBitField.Flags.Guilds,
@@ -24,7 +24,6 @@ client.on('ready', (c) => {
     c.channels.cache.get('1215801126889328691').setName(`👤 Member - ${guild.members.cache.filter(member => !member.user.bot).size}`);
     c.channels.cache.get('1215801150763171960').setName(`🤖 Bot - ${guild.members.cache.filter(member => member.user.bot).size}`);
 });
-
 
 //Reply to the user
 client.on('messageCreate', (msg) => {
